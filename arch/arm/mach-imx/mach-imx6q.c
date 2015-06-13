@@ -346,7 +346,6 @@ static void __init imx6q_opp_check_speed_grading(struct device *cpu_dev)
 	 * 2b'01: 850000000Hz; -- i.MX6Q Only, exclusive with 1GHz.
 	 * 2b'00: 800000000Hz;
 	 * We need to set the max speed of ARM according to fuse map.
-	 */
 
 	val = readl_relaxed(base + OCOTP_CFG3);
 	val >>= OCOTP_CFG3_SPEED_SHIFT;
@@ -364,6 +363,7 @@ static void __init imx6q_opp_check_speed_grading(struct device *cpu_dev)
 			if (dev_pm_opp_disable(cpu_dev, 852000000))
 				pr_warn("failed to disable 850 MHz OPP\n");
 	}
+	 */
 
 put_node:
 	of_node_put(np);
